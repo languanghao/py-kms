@@ -3,7 +3,7 @@ py-kms is a port of node-kms by [markedsword](http://forums.mydigitallife.info/m
 
 # Features
 - Responds to V4, V5, and V6 KMS requests.
-- Supports activating Windows 7/8/8.1/2008R2/2012/2012R2 and Office 2010/2013.
+- Supports activating Windows 7/8/8.1/10/2008R2/2012/2012R2 and Office 2010/2013/2016.
 - It's written in Python.
 
 # Dependencies
@@ -13,3 +13,23 @@ py-kms is a port of node-kms by [markedsword](http://forums.mydigitallife.info/m
 # Usage
 - To start the server, execute `python server.py [listen_address] [port]`. The default listening address is `0.0.0.0` (all interfaces) and the default port is `1688`.
 - To run the client, use `python client.py server_address [port]`. The default port is `1688`.
+
+# How to active office
+
+- Run `cmd.exe` as **Administrator**
+
+```
+cd "C:\Program Files\Microsoft Office\Office16\OSPP.VBS"
+cscript ospp.vbs /sethst: 192.168.0.22
+cscript ospp.vbs /act
+cscript ospp.vbs /dstatus
+```
+
+# How to active windows
+
+- Run `cmd.exe` as **Administrator**
+
+```
+slmgr -skms 192.168.0.22:1688
+slmgr -ato
+```
