@@ -20,7 +20,7 @@ py-kms is a port of node-kms by [markedsword](http://forums.mydigitallife.info/m
 
 ```
 cd "C:\Program Files\Microsoft Office\Office16\OSPP.VBS"
-cscript ospp.vbs /sethst: 192.168.0.22
+cscript ospp.vbs /sethst: 192.168.0.22 (your kms server ip)
 cscript ospp.vbs /act
 cscript ospp.vbs /dstatus
 ```
@@ -30,6 +30,6 @@ cscript ospp.vbs /dstatus
 - Run `cmd.exe` as **Administrator**
 
 ```
-slmgr -skms 192.168.0.22:1688
+slmgr -skms 192.168.0.22:1688  (your kms server ip)
 slmgr -ato
 ```
